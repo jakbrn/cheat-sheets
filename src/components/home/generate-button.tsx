@@ -6,7 +6,7 @@ import { Dialog, DialogTrigger } from '../ui/dialog'
 import { useUser } from '@/hooks/user'
 import { Skeleton } from '../ui/skeleton'
 import GenerateDialog from './generate-dialog'
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 
 export default function GenerateButton() {
   const user = useUser()
@@ -22,7 +22,9 @@ export default function GenerateButton() {
           Generuj
         </Button>
       </DialogTrigger>
-      <GenerateDialog onOpenChange={setOpen} />
+      <Suspense>
+        <GenerateDialog onOpenChange={setOpen} />
+      </Suspense>
     </Dialog>
   )
 }
