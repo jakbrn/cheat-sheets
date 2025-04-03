@@ -7,11 +7,6 @@ services:
       - mongo
     environment:
       - DATABASE_URI=mongodb://mongo/cheatsheets
-    healthcheck:
-      test: 'wget -qO- http://127.0.0.1:3000/'
-      interval: 10s
-      timeout: 5s
-      retries: 3
 
   mongo:
     image: mongo:latest
@@ -21,8 +16,6 @@ services:
       - data:/data/db
     logging:
       driver: none
-    healthcheck:
-      disable: true
 
 volumes:
   data:
