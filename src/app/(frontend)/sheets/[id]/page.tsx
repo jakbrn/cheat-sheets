@@ -22,7 +22,7 @@ export default async function SheetPage({ params }: { params: Promise<{ id: stri
           <GoBack />
           <SendMail sheet={sheet} />
         </div>
-        <div className="flex flex-col items-center border w-full p-4 rounded-lg text-foreground bg-background">
+        <div className="flex flex-col items-stretch border w-full p-4 rounded-lg text-foreground bg-background">
           <RichText data={sheet.content} />
         </div>
       </div>
