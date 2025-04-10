@@ -66,6 +66,12 @@ function SheetsList() {
   const selectedLesson = searchParams.get('lessonId')
   const sheets = useSheets(selectedLesson)
 
+  if (!selectedLesson)
+    return (
+      <div className="flex flex-col items-center border w-full p-4 rounded-lg text-foreground bg-background">
+        Nie wybrano przedmiotu
+      </div>
+    )
   if (!sheets.data) return <Skeleton className="w-full h-16" />
 
   return sheets.data.length == 0 ? (
