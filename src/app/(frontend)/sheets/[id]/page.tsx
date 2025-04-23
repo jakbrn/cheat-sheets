@@ -15,8 +15,8 @@ export default async function SheetPage({ params }: { params: Promise<{ id: stri
   })) as Sheet & { lesson: Lesson }
 
   return (
-    <div className="flex flex-col items-center h-screen py-20">
-      <div className="flex flex-col w-[800px] gap-4">
+    <div className="flex flex-col items-center h-screen  p-4 pt-10 md:py-20">
+      <div className="flex flex-col w-[800px] max-w-full gap-4">
         <div className="font-bold text-3xl uppercase text-center">{sheet.topic}</div>
         <div className="flex justify-between">
           <GoBack />
