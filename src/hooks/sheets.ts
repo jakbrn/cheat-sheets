@@ -6,7 +6,7 @@ export function useSheets(lessonId?: string | null) {
     queryKey: ['sheets', lessonId],
     enabled: !!lessonId,
     queryFn: async (): Promise<Sheet[]> => {
-      const response = await fetch(`/api/sheets?lessonId=${lessonId}`)
+      const response = await fetch(`/api/sheets?where[lesson][equals]=${lessonId}`)
       const data = await response.json()
       return data.docs
     },
